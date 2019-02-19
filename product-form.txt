@@ -1,0 +1,8 @@
+<form [formGroup] = "this.productService.form" (ngSubmit)="onSubmit()">
+  <input type="hidden" formControlName="$key">
+  Product Name<input formControlName="productName" [ngClass] = "{'is-invalid' : submitted && formControls.productName.errors}" >
+  <p *ngIf="submitted && formControls.productName.errors"> Error</p>
+  Product Price<input formControlName="productPrice" [ngClass] = "{'is-invalid' : submitted && formControls.productPrice.errors}" >
+  <p *ngIf="submitted && formControls.productPrice.errors">Error</p>
+  <input type="submit" value="Submit">
+  </form>
